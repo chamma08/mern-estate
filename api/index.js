@@ -1,6 +1,7 @@
 import  express  from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRouter from './routes.route.js';
 dotenv.config();
 
 //line 2 and 3 to hide password from others
@@ -15,5 +16,6 @@ const app = express();
 
 app.listen(3000, () => {
         console.log('Server is running on port 30000');
-    }
-);
+});
+
+app.use("/api/user", userRouter);
